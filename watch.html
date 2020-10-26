@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- I'm sorry for snooping on you but I wanna know who visits my page :( -->
+    <script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script>
+    <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-151064305-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-151064305-1');
+    </script>
+
+    <title>n2d4/video</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#BDBBBA">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/hls.js/0.5.14/hls.min.js"></script>
+</head>
+
+<body>
+    <div class="upper">
+        <h1><a href="https://n2d4.com">n2d4</a>/<a href="./">video</a></h1>
+    </div>
+    <div class="lower">
+        <video id="vid" controls></video>
+        <script>
+            const vid = document.getElementById('vid');
+            const src = decodeURIComponent(location.search.substr(1));
+            if (vid.canPlayType('application/vnd.apple.mpegurl')) {
+                // use native browser
+                vid.src = src;
+                vid.addEventListener('loadedmetadata', () => {
+                    vid.play();
+                });
+            } else if (Hls.isSupported()) {
+                // use hls.js
+                var hls = new Hls();
+                hls.loadSource(src);
+                hls.attachMedia(vid);
+                hls.on(Hls.Events.MANIFEST_PARSED, () => {
+                    vid.play();
+                });
+            } else {
+                alert("Whoopsie! Your browser isn't supported!");
+            }
+        </script>
+    </div>
+</body>
+
+</html>

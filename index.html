@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- I'm sorry for snooping on you but I wanna know who visits my page :( -->
+    <script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script>
+    <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-151064305-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-151064305-1');
+    </script>
+
+    <title>n2d4/video</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#BDBBBA">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="upper">
+        <h1><a href="https://n2d4.com">n2d4</a>/<a href="./">video</a></h1>
+    </div>
+    <div class="lower">
+        <div class="nfield">
+            Enter a URL to stream from:
+        </div>
+        <div class="nfield">
+            <input id="urlfield" class="urlfield" type="url" placeholder="Insert URL" onchange="localStorage.setItem('n2d4.video.urlfield', event.target.value)">
+            <script>
+                document.getElementById("urlfield").value = localStorage.getItem('n2d4.video.urlfield') || '';
+            </script>
+            <button class="urlsubmit"
+                onclick="location.href = 'watch.html?' + encodeURIComponent(document.getElementById('urlfield').value);">GO</button>
+        </div>
+    </div>
+</body>
+
+</html>

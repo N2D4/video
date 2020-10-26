@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Mono:400,700');
+
+html {
+    font-family: 'Roboto Mono', monospace;
+    padding: 0px;
+    margin: 0px;
+    background-color: #111;
+    text-align: center;
+}
+
+body {
+    padding: 0px;
+    margin: 0px;
+}
+
+a {
+    color: inherit;
+    text-decoration: inherit;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+h1 {
+    font-size: 500%;
+    font-weight: 700;
+}
+
+.nfield {
+    margin: 16px;
+}
+
+.upper {
+    background-color: #000;
+    color: #888;
+    padding: 8px;
+}
+
+.lower {
+    color: white;
+    padding: 8px;
+}
+
+.urlfield, .urlsubmit {
+    background-color: transparent;
+    font-size: 180%;
+    padding: 16px;
+    border-radius: 24px;
+}
+
+.urlfield {
+    min-width: 50%;
+    width: 600px;
+    color: grey;
+    border: 1px solid white;
+}
+
+.urlsubmit {
+    font-weight: 700;
+    color: inherit;
+    margin-left: 16px;
+    border: none;
+}
+
+.urlsubmit:active {
+    background-color: #ffffff22;
+}
+
+video {
+    min-width: 50%;
+}
